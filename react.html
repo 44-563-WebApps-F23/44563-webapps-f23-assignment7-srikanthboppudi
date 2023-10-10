@@ -38,7 +38,7 @@
  <div id="counter">
     Count
  </div>
- <button class="btn btn-primary">Start Timer</button>
+ <button class="btn btn-primary" onclick="startTime()">Start Timer</button>
  <button class="btn btn-primary" onclick="recordTime()">React</button>
  <script>
     var reactTime=undefined;
@@ -47,6 +47,23 @@
         console.log( reactTime);
 
     }
+    function startTime(){
+        let countdown = document.getElementById("counter");
+        for(var i=0;i<9;i++){
+            setTimeout(function () {
+                    countdown.innerHTML = i;
+                }, (8 - i) * 1000);
+    }
+    setTimeout(function() {
+                if (reactTime === undefined) {
+                    document.getElementById("target").innerHTML = "Too Slow";
+                } else {
+                    let endTime = Date.now();
+                    let elapsed = endTime - reactTime;
+                    document.getElementById("target").innerHTML = "Time was " + elapsed;
+                }
+            }, 8000);
+  }
  </script>
 </body>
 </html>
