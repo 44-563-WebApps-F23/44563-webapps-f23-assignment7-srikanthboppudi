@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html> 
+    <head> 
+    <style>
+    .flex-container {
+      display: flex;  flex-direction:row;
+      background-color: red;
+  }
+
+.flex-container > div {  /*div children of the flex container*/
+  background-color: #f1f1f1; 
+  margin: 10px;  padding: 20px;  font-size: 30px;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) { 
+	 .flex-container{
+		 flex-direction:column;
+		 background-color: green;
+	  }
+	}
+</style>
+<title>Merging</title>
+</head>
+
+<body>
+  <h1>srikanth boppudi builds a merger</h1>
+		<div class="flex-container" id="target">
+		  <div class="merger">row item 1</div>   
+		  <div class="merger">row item 2</div>  
+		  <div class="merger">row item 3</div>  
+		</div>
+	
+	<p> Press the button to create an new element of type div and then add it to the container.
+		</p>
+		<button onclick="add()">Add end</button>
+	<input type="text" id="input" >
+    <script>
+        function add(){
+        let newelement= document.createElement("div");
+        let i = document.getElementById("input").value;
+        newelement.innerHTML = i;
+        newelement.className = "merger";
+        let container = document.getElementById('target');
+        container.appendChild(newelement);}
+    </script>
+</body>
+<script>
+	function makeNewDiv(){
+		/* make the div and its text */
+		let element = document.createElement("div")
+		element.innerHTML = "an item after 3"
+		element.style.color = "orange"
+
+		/* add it to the container */
+		let container = document.getElementById('target')
+		container.appendChild(element)	
+    }
+</script>
+</html>	
