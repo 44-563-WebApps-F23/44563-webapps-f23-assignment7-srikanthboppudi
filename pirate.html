@@ -151,8 +151,8 @@
               }
               checkCount++;
               penalty++;
-              document.getElementById("locations").innerHTML =  checkCount;
-              document.getElementById("penalty").innerHTML = penalty;
+              document.getElementById("locations").innerHTML =  "locations: "+checkCount;
+              document.getElementById("penalty").innerHTML = "penality: "+penalty;
               lastCheck=position;
          }
          function help(){
@@ -173,7 +173,7 @@
                   document.getElementById("help").innerHTML = "Step Faster";
               }
     penalty += 2;
-    document.getElementById("penalty").innerHTML = penalty;
+    document.getElementById("penalty").innerHTML = "penalty: "+penalty;
          }
     </script>
     <button id="Button" onclick="newGame()">new game</button>
