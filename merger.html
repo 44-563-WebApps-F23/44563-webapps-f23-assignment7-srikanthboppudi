@@ -74,4 +74,30 @@
 		container.appendChild(element)	
     }
 </script>
+<button id="Button" onclick="swap()">Swap</button>
+<script>
+  function swap() {
+
+        let mergerItems = document.getElementsByClassName("merger");
+
+        let container = document.getElementById("target");
+
+        let e1 = Math.floor(Math.random() * mergerItems.length);
+
+        let e2 = Math.floor(Math.random() * mergerItems.length);
+
+        let firstText = document.getElementsByClassName("merger")[e1];
+
+        let secondText = document.getElementsByClassName("merger")[e2];
+
+        if (mergerItems.length > 1) {
+
+            let temp = firstText.innerHTML;
+
+            firstText.innerHTML = secondText.innerHTML;
+
+            secondText.innerHTML = temp;
+    }
+  }
+</script>
 </html>	

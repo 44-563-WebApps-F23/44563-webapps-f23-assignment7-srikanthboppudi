@@ -176,6 +176,22 @@
     document.getElementById("penalty").innerHTML = penalty;
          }
     </script>
+    <button id="Button" onclick="newGame()">new game</button>
+    <script>
+    let trapPosition = Math.floor(Math.random() * 25);
+    let treasurePosition = Math.floor(Math.random() * 25);
+    while (trapPosition === treasurePosition) {
+        treasurePosition = Math.floor(Math.random() * 25);
+    }
+    function newGame(){
+        document.getElementById("locations").innerHTML =  0;
+              document.getElementById("penalty").innerHTML = 0;
+              for (let i = 0; i < 25; i++) {
+               document.getElementById(ids[i]).src = "treasurelocation.jpg";
+
+               }
+    }
+    </script>
 </body>
 </html>
 

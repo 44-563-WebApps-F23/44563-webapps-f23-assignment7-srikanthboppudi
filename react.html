@@ -48,13 +48,13 @@
 
     }
     function startTime(){
-        let countdown = document.getElementById("counter");
+      let countdown = Math.floor(Math.random() * 9) + 2;
         for(var i=0;i<9;i++){
-            setTimeout(function () {
-                    countdown.innerHTML = i;
-                }, (8 - i) * 1000);
-    }
-    setTimeout(function() {
+            setTimeout(function (){
+                    document.getElementById("counter").innerHTML = i;
+                }, (8 - i) * 1000)
+              }
+    setTimeout(function (){
                 if (reactTime === undefined) {
                     document.getElementById("target").innerHTML = "Too Slow";
                 } else {
@@ -63,7 +63,7 @@
                     document.getElementById("target").innerHTML = "Time was " + elapsed;
                 }
             }, 8000);
-  }
+          }
  </script>
 </body>
 </html>
